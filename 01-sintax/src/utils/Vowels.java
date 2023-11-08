@@ -1,13 +1,17 @@
 package utils;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Vowels {
   public static Integer count(String text) {
-    int vowels = 0;
-    for (char c : text.toCharArray()) {
-      if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
-        vowels++;
+    Set<Character> vowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
+    int count = 0;
+    for (char c : text.toLowerCase().toCharArray()) {
+      if (vowels.contains(c)) {
+        count++;
       }
     }
-    return vowels;
+    return count;
   }
 }
